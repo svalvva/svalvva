@@ -1,4 +1,3 @@
-# Nama file workflow
 name: Generate Snake Animation
 
 on:
@@ -12,25 +11,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1. Mengambil kode dari repo Anda
+      # Langkah 1: Checkout kode di branch main
       - uses: actions/checkout@v3
 
-      # 2. Menjalankan generator animasi ular
+      # Langkah 2: Buat animasi ularnya
       - uses: Platane/github-contribution-grid-snake@v5
         with:
-          # Ambil nama user Anda secara otomatis
           github_user_name: ${{ github.repository_owner }}
-          # Daftar file output yang akan dibuat
+          # Simpan hasilnya di folder 'dist'
           outputs: |
             dist/snake.svg
             dist/snake-dark.svg?palette=github-dark
 
-      # 3. Mendorong (push) file yg sudah jadi ke branch "output"
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          # Branch tujuan
-          target_branch: output
-          # Folder yg akan didorong
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Langkah 3: Commit file yg baru dibuat ke branch main
+      - name: Commit snake animation
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          # Hanya commit jika ada perubahan file
+          git commit -m "chore: update snake animation" || exit 0
+          git push
