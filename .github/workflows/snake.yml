@@ -1,0 +1,36 @@
+# Nama file workflow
+name: Generate Snake Animation
+
+on:
+  # Ini akan berjalan otomatis setiap 12 jam
+  schedule:
+    - cron: "0 */12 * * *"
+  # Ini agar Anda bisa menjalankannya manual dari tab Actions
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Mengambil kode dari repo Anda
+      - uses: actions/checkout@v3
+
+      # 2. Menjalankan generator animasi ular
+      - uses: Platane/github-contribution-grid-snake@v5
+        with:
+          # Ambil nama user Anda secara otomatis
+          github_user_name: ${{ github.repository_owner }}
+          # Daftar file output yang akan dibuat
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      # 3. Mendorong (push) file yg sudah jadi ke branch "output"
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          # Branch tujuan
+          target_branch: output
+          # Folder yg akan didorong
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
