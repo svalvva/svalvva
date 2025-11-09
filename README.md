@@ -12,6 +12,10 @@
 ---
 [![](https://visitcount.itsvg.in/api?id=svalvva&icon=7&color=11)](https://visitcount.itsvg.in)
 
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/3d6c8703-9f18-4e8a-9153-75fcc938dbd6" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/svalvva/svalvva/main/dist/snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/svalvva/svalvva/main/dist/snake-dark.svg">
+  <img alt="Snake Animation" src="https://raw.githubusercontent.com/svalvva/svalvva/main/dist/snake.svg">
+</picture>
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
