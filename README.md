@@ -12,4 +12,6 @@
 ---
 [![](https://visitcount.itsvg.in/api?id=svalvva&icon=7&color=11)](https://visitcount.itsvg.in)
 
+![GitHub Snake](https://raw.githubusercontent.com/svalvva/svalvva/output/snake.svg)
+
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
