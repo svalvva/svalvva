@@ -14,8 +14,8 @@ jobs:
       # Langkah 1: Checkout kode di branch main
       - uses: actions/checkout@v3
 
-      # Langkah 2: Buat animasi ularnya
-      - uses: Platane/github-contribution-grid-snake@v5
+      # Langkah 2: Buat animasi ularnya (MENGGUNAKAN NAMA BARU YANG BENAR)
+      - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           # Simpan hasilnya di folder 'dist'
